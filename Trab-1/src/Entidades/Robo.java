@@ -3,9 +3,9 @@ package Entidades;
 import Exceptions.MovimentoInvalidoException;
 
 public class Robo {
-    private int posEixoX;
-    private int posEixoY;
-    private String cor;
+    protected int posEixoX;
+    protected int posEixoY;
+    protected String cor;
 
     public Robo(String cor){
         posEixoX = 0;
@@ -14,6 +14,10 @@ public class Robo {
     }
 
     public boolean mover(String movimento) {
+        try {
+            if(mover(Integer.parseInt(movimento)))
+                return true;
+        } catch(Exception e) { }
         movimento = movimento.toLowerCase();
 
         switch(movimento){
@@ -111,16 +115,18 @@ public class Robo {
     }
 
     public void setPosEixoX(int posEixoX) throws MovimentoInvalidoException {
-        if(posEixoX > 2 || posEixoX < 0)
+        if(posEixoX > 4 || posEixoX < 0) {
             throw new MovimentoInvalidoException();
-
-        this.posEixoX = posEixoX;
+        } else {
+            this.posEixoX = posEixoX;
+        }
     }
 
     public void setPosEixoY(int posEixoY) throws MovimentoInvalidoException {
-        if(posEixoY > 2 || posEixoY < 0)
+        if(posEixoY > 4 || posEixoY < 0) {
             throw new MovimentoInvalidoException();
-        
-        this.posEixoY = posEixoY;
+        } else {
+            this.posEixoY = posEixoY;
+        }
     }
 }
