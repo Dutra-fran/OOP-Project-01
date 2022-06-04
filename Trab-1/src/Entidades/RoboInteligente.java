@@ -19,41 +19,35 @@ public class RoboInteligente extends Robo {
             case 1:
                 try{
                     setPosEixoY(posEixoY - 1);
+                    return true;
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX, posEixoY - 1));
                     cache = true;
-                    return false;
                 }
-                break;
             case 2:
                 try{
                     setPosEixoY(posEixoY + 1);
+                    return true;
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX, posEixoY + 1));
                     cache = true;
-                    return false;
                 }
-                break;
             case 3:
                 try{
                     setPosEixoX(posEixoX + 1);
+                    return true;
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX + 1, posEixoY));
                     cache = true;
-                    return false;
                 }
-                break;
             case 4:
                 try{
                     setPosEixoX(posEixoX - 1);
+                    return true;
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX - 1, posEixoY));
                     cache = true;
-                    return false;
                 }
-                break;
-            default:
-                return false;
         }
 
         while(cache){
@@ -63,6 +57,6 @@ public class RoboInteligente extends Robo {
             }
         }
 
-        return true;
+        return false;
     }
 }

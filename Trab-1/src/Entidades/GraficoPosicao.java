@@ -18,7 +18,7 @@ public class GraficoPosicao {
         for(int i=0; i < 5; i++) {
             for(int j=0; j < 5; j++) {
                 if(robo.getPosEixoX() == j && robo.getPosEixoY() == i) {
-                    System.out.print(ANSI_CIANO + "R   " + ANSI_RESET);
+                    System.out.print(robo.cor + "   ");
                 } else if(posEixoXComida == j && posEixoYComida == i) {
                     System.out.print(ANSI_GREEN + "C   " + ANSI_RESET);
                 }
@@ -34,11 +34,11 @@ public class GraficoPosicao {
         for(int i=0; i < 5; i++) {
             for(int j=0; j < 5; j++) {
                 if(r1.getPosEixoX() == j && r1.getPosEixoY() == i && r2.getPosEixoX() == j && r2.getPosEixoY() == i) {
-                    System.out.print(ANSI_BLUE + "R" + ANSI_RESET + ANSI_RED + "R  " + ANSI_RESET);
+                    System.out.print(r1.cor + r2.cor + "  " + ANSI_RESET);
                 } else if(r1.getPosEixoX() == j && r1.getPosEixoY() == i){
-                    System.out.print(ANSI_BLUE + "R   " + ANSI_RESET);
+                    System.out.print(r1.cor + "   ");
                 } else if(r2.getPosEixoX() == j && r2.getPosEixoY() == i){
-                    System.out.print(ANSI_RED + "R   " + ANSI_RESET);
+                    System.out.print(r2.cor + "   ");
                 } else if(posEixoXComida == j && posEixoYComida == i) {
                     System.out.print(ANSI_GREEN + "C   " + ANSI_RESET);
                 } else {

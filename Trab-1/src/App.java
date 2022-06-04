@@ -13,9 +13,15 @@ public class App {
         // Questão 1
         // Fazer um switch case, perguntando a cor do Robô
         Scanner scan = new Scanner(System.in);
-        Robo robo = new Robo("ciano");
-        int posEixoXComida, posEixoYComida;
+        Robo robo=null;
+        int posEixoXComida, posEixoYComida, cor;
         String movimento;
+
+        System.out.println("Escolha uma cor:");
+        Cor.catalogarCores();
+
+        cor = Integer.parseInt(scan.next());
+        robo = Cor.corRobo(robo, cor);
 
         System.out.println("Informe a posição X da comida: ");
         posEixoXComida = Integer.parseInt(scan.next());
@@ -47,6 +53,8 @@ public class App {
                     System.out.println("Comida encontrada!");
                     break;
                 }
+            } else {
+                System.out.println("Opção inválida!");
             }
         }
 
@@ -54,12 +62,26 @@ public class App {
     }
 
     public static void questao2(){
-        Robo r1 = new Robo("Azul"), r2 = new Robo("Vermelho");
+        Robo r1 = null, r2 = null;
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
         int posEixoXComida, posEixoYComida;
         int passosR1=0, passosR2=0;
+        int cor;
         
+        System.out.println("Escolha uma cor para o Robô 1:");
+        Cor.catalogarCores();
+
+        cor = Integer.parseInt(scan.next());
+        r1 = Cor.corRobo(r1, cor);
+
+        System.out.println();
+
+        System.out.println("Escolha uma cor para o Robô 2:");
+        Cor.catalogarCores();
+
+        cor = Integer.parseInt(scan.next());
+        r2 = Cor.corRobo(r2, cor);
 
         System.out.println("Informe a posição X da comida: ");
         posEixoXComida = Integer.parseInt(scan.next());
@@ -78,8 +100,14 @@ public class App {
             System.out.println();
 
             if(r1.RobotFoundFood(posEixoXComida, posEixoYComida)){
-                System.out.println("Robô 1 encontrou a comida!");
+                System.out.println(r1.getCor() + " encontrou a comida!");
                 break;
+            }
+
+            try {
+                Thread.sleep(900);
+            } catch(Exception e) {
+                System.out.println(e.getMessage());
             }
             
             if(r2.mover(random.nextInt(4) + 1)) {
@@ -90,24 +118,42 @@ public class App {
             System.out.println();
 
             if(r2.RobotFoundFood(posEixoXComida, posEixoYComida)){
-               System.out.println("Robô 2 encontrou a comida!");
+               System.out.println(r2.getCor() + " encontrou a comida!");
                break; 
+            }
+
+            try {
+                Thread.sleep(900);
+            } catch(Exception e) {
+                System.out.println(e.getMessage());
             }
         }
 
-        System.out.println("Números de passos do " + GraficoPosicao.ANSI_BLUE + "Robô 1" + GraficoPosicao.ANSI_RESET + ": " + passosR1);
-        System.out.println("Números de passos do " + GraficoPosicao.ANSI_RED + "Robô 2" + GraficoPosicao.ANSI_RESET + ": " + passosR2);
+        System.out.println("Números de passos do " + r1.getCor() +": " + passosR1);
+        System.out.println("Números de passos do " + r2.getCor() + ": " + passosR2);
 
         scan.close();
     }
 
-    public static void questao3(){
-        Robo r1 = new Robo("Azul"), r2 = new RoboInteligente("Vermelho");
+    public static void questao3() {
+        Robo r1 = null, r2 = null;
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
         int posEixoXComida, posEixoYComida;
         int passosR1=0, passosR2=0;
-        
+        int cor;
+
+        System.out.println("Escolha uma cor para o Robô NÃO inteligente:");
+        Cor.catalogarCores();
+
+        cor = Integer.parseInt(scan.next());
+        r1 = Cor.corRobo(r1, cor);
+
+        System.out.println("Escolha uma cor para o Robô inteligente:");
+        Cor.catalogarCores();
+
+        cor = Integer.parseInt(scan.next());
+        r2 = Cor.corRobo(r2, cor);
 
         System.out.println("Informe a posição X da comida: ");
         posEixoXComida = Integer.parseInt(scan.next());
@@ -126,8 +172,14 @@ public class App {
             System.out.println();
 
             if(r1.RobotFoundFood(posEixoXComida, posEixoYComida)){
-                System.out.println("Robô não inteligente encontrou a comida!");
+                System.out.println(r1.getCor() + " encontrou a comida!");
                 break;
+            }
+
+            try {
+                Thread.sleep(900);
+            } catch(Exception e) {
+                System.out.println(e.getMessage());
             }
             
             if(r2.mover(random.nextInt(4) + 1)) {
@@ -138,13 +190,13 @@ public class App {
             System.out.println();
 
             if(r2.RobotFoundFood(posEixoXComida, posEixoYComida)){
-               System.out.println("Robô Inteligente encontrou a comida!");
+               System.out.println(r2.getCor() + " encontrou a comida!");
                break; 
             }
         }
-
-        System.out.println("Números de passos do " + GraficoPosicao.ANSI_BLUE + "Robô não inteligente" + GraficoPosicao.ANSI_RESET + ": " + passosR1);
-        System.out.println("Números de passos do " + GraficoPosicao.ANSI_RED + "Robô Inteligente" + GraficoPosicao.ANSI_RESET + ": " + passosR2);
+        System.out.println(r1.getCor() + " é o robô não inteligente, e o " + r2.getCor() + " é o robô inteligente.");
+        System.out.println("Números de passos do " + r1.getCor() + GraficoPosicao.ANSI_RESET + ": " + passosR1);
+        System.out.println("Números de passos do " + r2.getCor() + ": " + passosR2);
 
         scan.close();
     }

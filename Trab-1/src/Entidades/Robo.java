@@ -10,7 +10,7 @@ public class Robo {
     public Robo(String cor){
         posEixoX = 0;
         posEixoY = 0;
-        this.cor = cor;
+        this.cor = cor + "R" + Cor.ANSI_RESET;
     }
 
     public boolean mover(String movimento) {
@@ -128,5 +128,9 @@ public class Robo {
         } else {
             this.posEixoY = posEixoY;
         }
+    }
+
+    public String getCor(){
+        return cor;
     }
 }
