@@ -4,14 +4,35 @@ import java.util.Random;
 
 public class App {
     public static void main(String[] args){
-        //questao1();
-        //questao2();
-        questao3();
+        Scanner scan = new Scanner(System.in);
+        int escolha=0;
+
+        System.out.println("Deseja visualizar qual questão?");
+        System.out.println("\t1. Questão 1");
+        System.out.println("\t2. Questão 2");
+        System.out.println("\t3. Questão 3");
+
+        escolha = Integer.parseInt(scan.next());
+
+        switch(escolha){
+            case 1:
+                questao1();
+                break;
+            case 2:
+                questao2();
+                break;
+            case 3:
+                questao3();
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
+
+        scan.close();
     }
 
     public static void questao1() {
         // Questão 1
-        // Fazer um switch case, perguntando a cor do Robô
         Scanner scan = new Scanner(System.in);
         Robo robo=null;
         int posEixoXComida, posEixoYComida, cor;
@@ -23,11 +44,21 @@ public class App {
         cor = Integer.parseInt(scan.next());
         robo = Cor.corRobo(robo, cor);
 
-        System.out.println("Informe a posição X da comida: ");
-        posEixoXComida = Integer.parseInt(scan.next());
+        while(true) {
+            System.out.println("Informe a posição X da comida: ");
+            posEixoXComida = Integer.parseInt(scan.next());
 
-        System.out.println("Informe a posição Y da comida: ");
-        posEixoYComida = Integer.parseInt(scan.next());
+            if(posEixoXComida <= 4 && posEixoXComida >= 0)
+                break;
+        }
+
+        while(true) {
+            System.out.println("Informe a posição Y da comida: ");
+            posEixoYComida = Integer.parseInt(scan.next());
+
+            if(posEixoYComida <= 4 && posEixoYComida >= 0)
+                break;
+        }
 
         System.out.println();
 
@@ -83,11 +114,21 @@ public class App {
         cor = Integer.parseInt(scan.next());
         r2 = Cor.corRobo(r2, cor);
 
-        System.out.println("Informe a posição X da comida: ");
-        posEixoXComida = Integer.parseInt(scan.next());
+        while(true) {
+            System.out.println("Informe a posição X da comida: ");
+            posEixoXComida = Integer.parseInt(scan.next());
 
-        System.out.println("Informe a posição Y da comida: ");
-        posEixoYComida = Integer.parseInt(scan.next());
+            if(posEixoXComida <= 4 && posEixoXComida >= 0)
+                break;
+        }
+
+        while(true) {
+            System.out.println("Informe a posição Y da comida: ");
+            posEixoYComida = Integer.parseInt(scan.next());
+
+            if(posEixoYComida <= 4 && posEixoYComida >= 0)
+                break;
+        }
 
         GraficoPosicao grafico = new GraficoPosicao(posEixoXComida, posEixoYComida);
 
@@ -155,11 +196,21 @@ public class App {
         cor = Integer.parseInt(scan.next());
         r2 = Cor.corRobo(r2, cor);
 
-        System.out.println("Informe a posição X da comida: ");
-        posEixoXComida = Integer.parseInt(scan.next());
+        while(true) {
+            System.out.println("Informe a posição X da comida: ");
+            posEixoXComida = Integer.parseInt(scan.next());
 
-        System.out.println("Informe a posição Y da comida: ");
-        posEixoYComida = Integer.parseInt(scan.next());
+            if(posEixoXComida <= 4 && posEixoXComida >= 0)
+                break;
+        }
+
+        while(true) {
+            System.out.println("Informe a posição Y da comida: ");
+            posEixoYComida = Integer.parseInt(scan.next());
+
+            if(posEixoYComida <= 4 && posEixoYComida >= 0)
+                break;
+        }
 
         GraficoPosicao grafico = new GraficoPosicao(posEixoXComida, posEixoYComida);
 
@@ -195,7 +246,7 @@ public class App {
             }
         }
         System.out.println(r1.getCor() + " é o robô não inteligente, e o " + r2.getCor() + " é o robô inteligente.");
-        System.out.println("Números de passos do " + r1.getCor() + GraficoPosicao.ANSI_RESET + ": " + passosR1);
+        System.out.println("Números de passos do " + r1.getCor() + ": " + passosR1);
         System.out.println("Números de passos do " + r2.getCor() + ": " + passosR2);
 
         scan.close();

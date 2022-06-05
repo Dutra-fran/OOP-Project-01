@@ -3,11 +3,6 @@ package Entidades;
 public class GraficoPosicao {
     private int posEixoXComida;
     private int posEixoYComida;
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_CIANO = "\u001B[36m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_RESET = "\u001B[0m";
 
     public GraficoPosicao(int posEixoXComida, int posEixoYComida){
         this.posEixoXComida = posEixoXComida;
@@ -20,7 +15,7 @@ public class GraficoPosicao {
                 if(robo.getPosEixoX() == j && robo.getPosEixoY() == i) {
                     System.out.print(robo.cor + "   ");
                 } else if(posEixoXComida == j && posEixoYComida == i) {
-                    System.out.print(ANSI_GREEN + "C   " + ANSI_RESET);
+                    System.out.print(Cor.ANSI_GREEN + "C   " + Cor.ANSI_RESET);
                 }
                 else {
                     System.out.print("*   ");
@@ -34,13 +29,13 @@ public class GraficoPosicao {
         for(int i=0; i < 5; i++) {
             for(int j=0; j < 5; j++) {
                 if(r1.getPosEixoX() == j && r1.getPosEixoY() == i && r2.getPosEixoX() == j && r2.getPosEixoY() == i) {
-                    System.out.print(r1.cor + r2.cor + "  " + ANSI_RESET);
+                    System.out.print(r1.cor + r2.cor + "  ");
                 } else if(r1.getPosEixoX() == j && r1.getPosEixoY() == i){
                     System.out.print(r1.cor + "   ");
                 } else if(r2.getPosEixoX() == j && r2.getPosEixoY() == i){
                     System.out.print(r2.cor + "   ");
                 } else if(posEixoXComida == j && posEixoYComida == i) {
-                    System.out.print(ANSI_GREEN + "C   " + ANSI_RESET);
+                    System.out.print(Cor.ANSI_GREEN + "C   " + Cor.ANSI_RESET);
                 } else {
                     System.out.print("*   ");
                 }
