@@ -1,6 +1,7 @@
 package Entidades;
 
 import Exceptions.MovimentoInvalidoException;
+import Services.Cor;
 
 public class Robo {
     protected int posEixoX;

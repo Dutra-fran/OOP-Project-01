@@ -1,4 +1,7 @@
-package Entidades;
+package Services;
+
+import Entidades.Robo;
+import Entidades.RoboInteligente;
 
 public abstract class Cor {
     public static final String ANSI_BLUE = "\u001B[34m";

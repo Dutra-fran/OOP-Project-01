@@ -1,8 +1,9 @@
 import java.util.Random;
 import java.util.Scanner;
-import Entidades.Cor;
-import Entidades.GraficoPosicao;
+
 import Entidades.Robo;
+import Services.Cor;
+import Services.GraficoPosicao;
 
 public class App {
     public static void main(String[] args){
