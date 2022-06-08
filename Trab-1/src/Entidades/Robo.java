@@ -1,6 +1,6 @@
-package projetoPOO.Entidades;
+package Entidades;
 
-import projetoPOO.Exceptions.MovimentoInvalidoException;
+import Exceptions.MovimentoInvalidoException;
 
 public class Robo {
     protected int posEixoX;

@@ -1,11 +1,8 @@
-package projetoPOO;
-
 import java.util.Random;
 import java.util.Scanner;
-
-import projetoPOO.Entidades.Cor;
-import projetoPOO.Entidades.GraficoPosicao;
-import projetoPOO.Entidades.Robo;
+import Entidades.Cor;
+import Entidades.GraficoPosicao;
+import Entidades.Robo;
 
 public class App {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package projetoPOO.Entidades;
+package Entidades;
 
 public abstract class Cor {
     public static final String ANSI_BLUE = "\u001B[34m";

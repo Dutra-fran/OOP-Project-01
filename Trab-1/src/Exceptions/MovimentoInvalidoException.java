@@ -1,4 +1,4 @@
-package projetoPOO.Exceptions;
+package Exceptions;
 
 public class MovimentoInvalidoException extends Exception {
     public String toString(int posEixoX, int posEixoY){
