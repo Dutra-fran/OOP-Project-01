@@ -1,4 +1,4 @@
-package Entidades;
+package projetoPOO.Entidades;
 
 public class GraficoPosicao {
     private int posEixoXComida;

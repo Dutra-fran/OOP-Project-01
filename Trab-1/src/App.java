@@ -1,6 +1,11 @@
-import java.util.Scanner;
-import Entidades.*;
+package projetoPOO;
+
 import java.util.Random;
+import java.util.Scanner;
+
+import projetoPOO.Entidades.Cor;
+import projetoPOO.Entidades.GraficoPosicao;
+import projetoPOO.Entidades.Robo;
 
 public class App {
     public static void main(String[] args){
@@ -171,7 +176,9 @@ public class App {
         }
 
         System.out.println("Números de passos do " + r1.getCor() +": " + passosR1);
+        System.out.println("Números de erros do " + r1.getCor() +": " + r1.getErros());
         System.out.println("Números de passos do " + r2.getCor() + ": " + passosR2);
+        System.out.println("Números de erros do " + r2.getCor() +": " + r2.getErros());
 
         scan.close();
     }
@@ -247,7 +254,9 @@ public class App {
         }
         System.out.println(r1.getCor() + " é o robô não inteligente, e o " + r2.getCor() + " é o robô inteligente.");
         System.out.println("Números de passos do " + r1.getCor() + ": " + passosR1);
+        System.out.println("Números de erros do " + r1.getCor() + ": " + r1.getErros());
         System.out.println("Números de passos do " + r2.getCor() + ": " + passosR2);
+        System.out.println("Números de erros do " + r2.getCor() + ": " + r2.getErros());
 
         scan.close();
     }

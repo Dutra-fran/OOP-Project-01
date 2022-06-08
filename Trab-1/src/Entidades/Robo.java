@@ -1,10 +1,12 @@
-package Entidades;
+package projetoPOO.Entidades;
 
-import Exceptions.MovimentoInvalidoException;
+import projetoPOO.Exceptions.MovimentoInvalidoException;
 
 public class Robo {
     protected int posEixoX;
     protected int posEixoY;
+    protected int erros=0;
+
     protected String cor;
 
     public Robo(String cor){
@@ -26,6 +28,7 @@ public class Robo {
                     setPosEixoY(posEixoY - 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX, posEixoY - 1));
+                    erros++;
                 }
                 break;
             case "down":
@@ -33,6 +36,7 @@ public class Robo {
                     setPosEixoY(posEixoY + 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX, posEixoY + 1));
+                    erros++;
                 }
                 break;
             case "right":
@@ -40,6 +44,7 @@ public class Robo {
                     setPosEixoX(posEixoX + 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX + 1, posEixoY));
+                    erros++;
                 }
                 break;
             case "left":
@@ -47,6 +52,7 @@ public class Robo {
                     setPosEixoX(posEixoX - 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX - 1, posEixoY));
+                    erros++;
                 }
                 break;
             default:
@@ -64,6 +70,7 @@ public class Robo {
                     setPosEixoY(posEixoY - 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX, posEixoY - 1));
+                    erros++;
                 }
                 break;
             case 2:
@@ -71,6 +78,7 @@ public class Robo {
                     setPosEixoY(posEixoY + 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX, posEixoY + 1));
+                    erros++;
                 }
                 break;
             case 3:
@@ -78,6 +86,7 @@ public class Robo {
                     setPosEixoX(posEixoX + 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX + 1, posEixoY));
+                    erros++;
                 }
                 break;
             case 4:
@@ -85,6 +94,7 @@ public class Robo {
                     setPosEixoX(posEixoX - 1);
                 } catch(MovimentoInvalidoException e) {
                     System.out.println(e.toString(posEixoX - 1, posEixoY));
+                    erros++;
                 }
                 break;
             default:
@@ -132,5 +142,9 @@ public class Robo {
 
     public String getCor(){
         return cor;
+    }
+
+    public int getErros() {
+        return erros;
     }
 }
