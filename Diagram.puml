@@ -1,0 +1,44 @@
+@startuml 'Diagram'
+
+component Entidades {
+    class Robo {
+        # Cor
+        # erros
+        # posEixoX
+        # posEixoY
+        + mover(String)
+        + mover (Int)
+        + RobotFoundFood()
+
+    }
+    class RoboInteligente{
+        - cache
+        + acertarMovimento()
+    }
+}
+
+component Services {
+    abstract class Cor{
+        
+    }
+    class GraficoPosicao{
+        - posEixoXComida
+        - posEixoYComida
+        + RoboPosicao(Robo robo)
+        + RoboPosicao(Robo r1, Robo r2)
+    }
+}
+
+component Exceptions{
+    class MovimentoInvalidoException{
+    + MovimentoInvalidoException()
+    }
+}
+
+class App{
+
+}
+
+Robo <|-- RoboInteligente
+
+@enduml
