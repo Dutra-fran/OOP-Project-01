@@ -1,0 +1,67 @@
+@startuml 'Diagram'
+
+namespace Entidades {
+    class Robo {
+        # Cor
+        # erros
+        # posEixoX
+        # posEixoY
+        + RobotFoundFood(int posEixoXComida, int posEixoYComida)
+        + mover(String movimento)
+        + mover (Int movimento)
+        
+    
+    }
+    note bottom: Overwrite
+    Robo <|-- RoboInteligente
+
+    class RoboInteligente{
+        - cache
+        + acertarMovimento(Int cache)
+        + mover(int movimento)
+    }
+    note left of RoboInteligente::mover 
+    Overloading
+    end note
+}
+
+namespace Services {
+    abstract class Cor{
+        {static}+ANSI_BLUE
+        {static}+ANSI_GREEN
+        {static}+ANSI_CIANO
+        {static}+ANSI_RED
+        {static}+ANSI_BLACK
+        {static}+ANSI_YELLOW
+        {static}+ANSI_PURPLE
+        {static}+ANSI_WHITE
+        {static}+ANSI_RESET
+        {static}+corRobo()
+        {static}+corRoboInteligente()
+        {static}+catalogarCores() 
+    }
+    class GraficoPosicao{
+        - posEixoXComida
+        - posEixoYComida
+        + RoboPosicao(Robo robo)
+        + RoboPosicao(Robo r1, Robo r2)
+    }
+}
+    note bottom: Overwrite
+
+namespace Exceptions{
+
+    class MovimentoInvalidoException{
+    + MovimentoInvalidoException()
+    }
+}
+
+class App
+    note left: classe principal
+
+App--Entidades
+App--Exceptions
+App--Services
+
+
+@enduml
