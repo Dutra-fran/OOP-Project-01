@@ -17,6 +17,7 @@ namespace Entidades {
 
     class RoboInteligente{
         - cache
+        - cacheCount
         + acertarMovimento(Int cache)
         + mover(int movimento)
     }
