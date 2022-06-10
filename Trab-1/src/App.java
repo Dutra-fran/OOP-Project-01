@@ -15,7 +15,11 @@ public class App {
         System.out.println("\t2. Questão 2");
         System.out.println("\t3. Questão 3");
 
-        escolha = Integer.parseInt(scan.next());
+        try {
+            escolha = Integer.parseInt(scan.next());
+        } catch(NumberFormatException e){
+            System.out.println("Insira um número inteiro para escolher a questão!");
+        }
 
         switch(escolha){
             case 1:
@@ -96,6 +100,7 @@ public class App {
     }
 
     public static void questao2(){
+        // Questão 2
         Robo r1 = null, r2 = null;
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
@@ -182,6 +187,7 @@ public class App {
     }
 
     public static void questao3() {
+        // Questão 3
         Robo r1 = null, r2 = null;
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
